@@ -2,8 +2,8 @@
 layout: post
 title: "Introducing Frogheim... Plus"
 date: 2023-07-27 06:12:00 -0700
-categories: valheim games
-tags: valheim games
+categories: games valheim
+tags: games valheim
 img_path: /assets/img
 ---
 >This post is primarily aimed at a group of fellow Valheim players and friends. However I'll share more on Valheim, its dedicated server, and more, in due time.
