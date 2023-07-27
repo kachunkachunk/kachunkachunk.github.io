@@ -4,7 +4,7 @@ title: "Introducing Frogheim... Plus"
 date: 2023-07-27 06:12:00 -0700
 categories: games valheim
 tags: games valheim
-img_path: /assets/img/posts
+img_path: /assets/img
 ---
 >This post is primarily aimed at a group of fellow Valheim players and friends. However I'll share more on Valheim, its dedicated server, and more, in due time.
 {: .prompt-info }
@@ -23,11 +23,11 @@ This is quite easy, provided you're not playing on a platform that doesn't suppo
 
 3. Grab the latest release of Valheim Plus from the current maintaner, here: [https://github.com/Grantapher/ValheimPlus/releases/latest](https://github.com/Grantapher/ValheimPlus/releases/latest). You're looking for the `WindowsClient.zip` file under the `Assets` section at the bottom.
    
-   > The original git repo for [Valheim Plus](https://github.com/valheimPlus/ValheimPlus) stopped being updated, so [https://github.com/Grantapher/ValheimPlus](Grantapher) has graciously taken over development, at least for the time being.
+   > The original git repo for [Valheim Plus](https://github.com/valheimPlus/ValheimPlus) stopped being updated, so GitHub user [Grantapher](https://github.com/Grantapher) has graciously taken over development, at least for the time being.
    {: .prompt-info }
 
 4. Extract the contents of the release over to your copied game directory. In this example, it's at `%UserProfile%\Desktop\Valheim`, and the result should look like this:
-   ![Modified Valheim directory](valheim_plus_extracted.png){: .normal}
+   ![Modified Valheim directory](posts/valheim_plus_extracted.png){: .normal}
 
 5. You don't really have to modify anything else. But feel free to make a shortcut somewhere, or pin it to your Start Menu, or if you're feeling *really* adventurous, add the copied version of `valheim.exe` to Steam as a "Non-Steam Game" so it shows up in your library.
 
@@ -55,7 +55,7 @@ Valheim Plus is a mod that introduces a bunch of quality-of-life improvements/tw
 {: .prompt-info }
 
 
-### Modded: Building
+### Building
 
 ```ini
 [Building]
@@ -81,7 +81,7 @@ areaRepairRadius = 7.5
 - AoE effect for repairs, lessening the need to spam-click or pixel-hunt.
 
 
-### Modded: HUD
+### HUD
 
 ```ini
 [Hud]
@@ -100,7 +100,7 @@ displayBowAmmoCounts = 1
 - Skill XP gains are shown on-screen.
 - Bow ammo count is shown on-screen.
 
-### Modded: Map
+### Map
 ```ini
 [Map]
 enabled = true
@@ -121,7 +121,7 @@ displayCartsAndBoats = true
 - Player position sharing cannot be turned off (or forgotten about, rather).
 - Carts and Boats are shown on the map, now.
 
-### Modded: Chat
+### Chat
 ```ini
 [Chat]
 enabled = true
