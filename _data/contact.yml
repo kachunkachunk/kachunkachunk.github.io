@@ -2,17 +2,23 @@
 
 - type: github
   icon: "fab fa-github"
+  url: 'https://github.com/kachunkachunk'
 
-- type: twitter
-  icon: "fab fa-twitter"
-
-- type: email
-  icon: "fas fa-envelope"
-  noblank: true # open link in current tab
+- type: youtube
+  icon: 'fab fa-youtube'
+  url: 'https://www.youtube.com/channel/UCkeyMJnlaXGhahN3rgtjl0w'
 
 - type: rss
   icon: "fas fa-rss"
   noblank: true
+
+#- type: twitter
+#  icon: "fab fa-twitter"
+
+#- type: email
+#  icon: "fas fa-envelope"
+#  noblank: true # open link in current tab
+
 # Uncomment and complete the url below to enable more contact options
 #
 # - type: mastodon
