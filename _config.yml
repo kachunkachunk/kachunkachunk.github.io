@@ -18,9 +18,9 @@ timezone: America/Vancouver
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: kachunkachunk | darmstrong.ca # the main title
+title: kachunkachunk # the main title
 
-tagline: Virtualization & Storage SME, Mountain Biker, Enjoyer of Film and Games # it will display as the sub-title
+tagline: Storage & Virtualization SME, Mountain Biker, Enjoyer of Film and Games # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   A place to express and share some things
@@ -85,7 +85,7 @@ avatar: https://avatars.githubusercontent.com/u/14896276?s=400&u=be0a58a30517051
 toc: true
 
 comments:
-  active: # The global switch for posts comments, e.g., 'disqus'.  Keep it empty means disable
+  active: giscus # The global switch for posts comments, e.g., 'disqus'.  Keep it empty means disable
   # The active options are as follows:
   disqus:
     shortname: # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
@@ -187,6 +187,11 @@ exclude:
   - rollup.config.js
   - node_modules
   - package*.json
+  - archive_old
+  - template
+  - reference_files
+  - kubernetes
+  - Dockerfile
 
 jekyll-archives:
   enabled: [categories, tags]
