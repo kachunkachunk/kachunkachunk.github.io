@@ -1,1 +1,1 @@
-Please bear with me while I get things started.
+Please bear with me while I get things started!
