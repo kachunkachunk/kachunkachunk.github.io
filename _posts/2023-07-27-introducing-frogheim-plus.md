@@ -1,16 +1,15 @@
 ---
 layout: post
-title: "Title"
+title: "Introducing Frogheim... Plus"
 date: 2023-07-27 06:12:00 -0700
 categories: valheim games
 tags: valheim games
 img_path: /assets/img
 ---
 
-# Introducing Frogheim... Plus
-
 This post is primarily aimed at a group of fellow Valheim players and friends. However I'll share more on Valheim, its dedicated server, and more, in due time.
 
+Alright, waifu, friends, and pals - we're moving to a Valheim-Plus modded server instance. But fear not, as we will not lose any progress, in the process.
 
 ## Grabbing the mod
 
@@ -45,7 +44,7 @@ This is quite easy, provided you're not playing on a platform that doesn't suppo
 7. Connect to the game server. If you don't already have Frogheim Plus favorited, you can locate it in your Server Browser. You'll know you have the right one, if the port number is 19001 or 19002.
 
 
-## Game balance changes
+## Our game balance changes (for now)
 
 Valheim Plus is a mod that introduces a bunch of quality-of-life improvements/tweaks. It could also be used to make the game *more* difficult or punishing than it already is, but that's not what we've done.
 
@@ -72,6 +71,7 @@ enableAreaRepair = true
 ; Requires enableAreaRepair=true
 areaRepairRadius = 7.5
 ```
+{: .nolineno }
 - Build distance (from yourself) increased by 4 meters, to 12 meters.
 - All committed resources are returned upon destroying or deconstructing a structure, as opposed to some of it disappearing.
 - AoE effect for repairs, lessening the need to spam-click or pixel-hunt.
@@ -90,6 +90,7 @@ experienceGainedNotifications = true
 ; If bow is in hotbar, display current ammo & total ammo under hotbar icon - never (0), when equipped (1), or always (2).
 displayBowAmmoCounts = 1
 ```
+{: .nolineno }
 - Enabled material count/cost values to HUD while in build mode.
 - Skill XP gains are shown on-screen.
 - Bow ammo count is shown on-screen.
@@ -108,6 +109,7 @@ shareAllPins = true
 ; Display carts and boats on the map
 displayCartsAndBoats = true
 ```
+{: .nolineno }
 - Enabled automatic map and pin sharing/synchronization between players.
 - Player position sharing cannot be turned off (or forgotten about, rather).
 - Carts and Boats are shown on the map, now.
@@ -131,14 +133,14 @@ defaultNormalDistance = 32767
 ; This value determines the range in meters that you can see shout text messages by default.
 defaultShoutDistance = 70
 ```
+{: .nolineno }
 - Shout distance is now unlimited and/or will show up in the chat window, even if out of range (somehow).
 - Pings can be seen from any range, now.
 - Whispers remain close-range.
 - Talk is increased to 32,767 meters. It may or may not work as we hope/expect due to bugs (unconfirmed).
 
-#
 
-### Additional Valheim Plus Options
+## Other possible Valheim Plus options
 
 All Valheim Plus config options for our server (as of writing) are below.
 
@@ -1013,6 +1015,7 @@ wispSpawnIntervalMultiplier = 0
 ; This value determines the chance of a Wisp to spawn. A multiplier of 200 will result in a 100% wisp spawn chance.
 wispSpawnChanceMultiplier = 0
 ```
+{: .nolineno }
 
 Note:
 
@@ -1020,7 +1023,5 @@ Note:
 
 </details>
 <br>
-
-#
 
 That about covers things for now! Pleae share feedback and requests to the Signal group, rather than here, unless you have anything intended for the world to see.
