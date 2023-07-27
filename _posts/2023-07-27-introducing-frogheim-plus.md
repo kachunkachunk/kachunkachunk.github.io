@@ -4,7 +4,7 @@ title: "Introducing Frogheim... Plus"
 date: 2023-07-27 06:12:00 -0700
 categories: games valheim
 tags: games valheim
-img_path: /assets/img
+img_path: /assets/img/posts
 ---
 >This post is primarily aimed at a group of fellow Valheim players and friends. However I'll share more on Valheim, its dedicated server, and more, in due time.
 {: .prompt-info }
@@ -27,7 +27,7 @@ This is quite easy, provided you're not playing on a platform that doesn't suppo
    {: .prompt-info }
 
 4. Extract the contents of the release over to your copied game directory. In this example, it's at `%UserProfile%\Desktop\Valheim`, and the result should look like this:
-   !Modified Valheim directory(valheim_plus_extracted.png)
+   ![Modified Valheim directory](valheim_plus_extracted.png){: .normal}
 
 5. You don't really have to modify anything else. But feel free to make a shortcut somewhere, or pin it to your Start Menu, or if you're feeling *really* adventurous, add the copied version of `valheim.exe` to Steam as a "Non-Steam Game" so it shows up in your library.
 
