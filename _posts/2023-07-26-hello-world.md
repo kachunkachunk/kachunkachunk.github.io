@@ -18,4 +18,6 @@ Initial edits were made via shell, then via VS Code (Web), with some complicatio
 
 But otherwise, this seems fairly painless and I'll get to familiarize (and formalize) my use of GitHub.
 
+Edit/Update: Uh, read the Chirpy theme documentation more closely, heh. I forgot to set up GitHub Actions, hence a lot of weird commits at first, while troubleshooting.
+
 Assuming commits go as I like, I'll soon be onto some Valheim server stuff for a group of friends.
