@@ -12,43 +12,49 @@ Below you will find a summary of the changes I put into place, after observing f
 
 ## Valheim Plus changes:
 
-- Enabled First Person mode - toggle it on/off with F10.
-- Slightly reduced enemy difficulty scaling while around other players.
-- Increased all experience/XP gains by 15%.
-- Increased food effect duration by 15%.
-- Increased armor item protection by 15%.
-- Increased weapon item durability by 20%.
-- Increased tool item durability (hammers, cultivators, hoes) by 300%.
-- Increased player maximum carry weight by 25%.
-- Increased auto-pickup range to 3 meters from 2.
-- Decreased Guardian Buff cooldown to 600 seconds from 1200.
-- Disabled auto-unequip upon entering deep water (or swimming).
-- Reduced fall damage by 15%.
-- Increased block rating by 30%.
-- Increased stamina recovery per second by 15%
-- Reduced stamina drain while running, jumping, and encumbered by 30%.
-- Reduced stamina drain while sneaking by 100%.
-- Reduced stamina drain while swinging weapons by 20%.
-- Reduced stamina drain while cultivating and fishing by 30%.
-- Allowed building/crafting in mystical areas.
-- Slightly increased comfort radius.
-- Actually enabled area/AoE repair (this was missed last time).
-- Enabled optional Grid Alignment function for building. Toggle it with F7 and hold Alt to align to grid.
-- Slightly increased inventory slot counts for carts and boats to match certain chest capacities.
-- Upon reclaiming your grave (and items), item stacks will attempt to merge, to save space.
-- Teleportation restrictions are removed (you could not previously carry metal ore/bars through, among other things).
-**- Base item weights globally reduced by 20%.**
-**- Max item stack sizes doubled.**
-- Dropped/lost items now float in water and are now retrievable.
-- Drop chances for non-guaranteed drop sources (such as scrap piles in dungeons) are doubled.
-- Slight increases in yields for some materials while chopping, mining, and picking.
-- Moderate increases in yields for copper and tin.
-- Wagon weight/capacity benefits improved by 20%.
-- Slightly increased allowed workbench improvement placement range.
-- Bee hives produce twice as much honey per day.
-**- All production structures, including bee hives, now auto-deposit and auto-fuel with nearby chests up to 5m away.**
-- Fermenters produce twice the amount they used to.
-- Some production structures now show progress and time-to-produce figures on-screen.
+- Global Server and Client Improvements
+  - Enabled First Person mode - toggle it on/off with F10.
+- Game Rules, Difficulty, and Scaling
+  - Slightly reduced enemy difficulty scaling while around other players.
+  - Increased all experience/XP gains by 15%.
+  - Increased food effect duration by 15%.
+  - Increased armor item protection by 15%.
+  - Increased weapon item durability by 20%.
+  - Increased tool item durability (hammers, cultivators, hoes) by 300%.
+  - Increased player maximum carry weight by 25%.
+  - Increased auto-pickup range to 3 meters from 2.
+  - Decreased Guardian Buff cooldown to 600 seconds from 1200.
+  - Disabled auto-unequip upon entering deep water (or swimming).
+  - Reduced fall damage by 15%.
+  - Increased block rating by 30%.
+  - Increased stamina recovery per second by 15%
+  - Reduced stamina drain while running, jumping, and encumbered by 30%.
+  - Reduced stamina drain while sneaking by 100%.
+  - Reduced stamina drain while swinging weapons by 20%.
+  - Reduced stamina drain while cultivating and fishing by 30%.
+- Building Mode
+  - Allowed building/crafting in mystical areas.
+  - Slightly increased comfort radius.
+  - Actually enabled area/AoE repair (this was missed last time).
+  - Enabled optional Grid Alignment function for building. Toggle it with F7 and hold Alt to align to grid.
+- Inventory Management and Looting
+  - Slightly increased inventory slot counts for carts and boats to match certain chest capacities.
+  - Upon reclaiming your grave (and items), item stacks will attempt to merge, to save space.
+  - Teleportation restrictions are removed (you could not previously carry metal ore/bars through, among other things).
+  - **Base item weights globally reduced by 20%.**
+  - **Max item stack sizes doubled.**
+  - Dropped/lost items now float in water and are now retrievable.
+  - Drop chances for non-guaranteed drop sources (such as scrap piles in dungeons) are doubled.
+  - Slight increases in yields for some materials while chopping, mining, and picking.
+  - Moderate increases in yields for copper and tin.
+  - Wagon weight/capacity benefits improved by 20%.
+- Crafting
+  - Slightly increased allowed workbench improvement placement range.
+- Production Structures
+  - Bee hives produce twice as much honey per day.
+  - **All production structures, including bee hives, now auto-deposit and auto-fuel with nearby chests up to 5m away.**
+  - Fermenters produce twice the amount they used to.
+  - Some production structures now show progress and time-to-produce figures on-screen.
 
 ## New Configuration
 
@@ -642,7 +648,7 @@ marble = 0
 </details>
 
 <details>
-<summary>Inventory Management & Looting</summary>
+<summary>Inventory Management and Looting</summary>
 <div markdown="1">
 ```ini
 [Inventory]
