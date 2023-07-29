@@ -23,6 +23,7 @@ Below you will find a summary of the changes I put into place, after observing f
   - Increased tool item durability (hammers, cultivators, hoes) by 300%.
   - Increased player maximum carry weight by 25%.
   - Increased auto-pickup range to 3 meters from 2.
+  - Enabled feature to prevent accidental (and undesired) crop spacing overlap.
   - Decreased Guardian Buff cooldown to 600 seconds from 1200.
   - Disabled auto-unequip upon entering deep water (or swimming).
   - Reduced fall damage by 15%.
@@ -65,71 +66,65 @@ As an experiment, I've reordered the complete file into more manageable sections
 <div markdown="1">
 ```ini
 [ValheimPlus]
-; Change false to true to enable this section.
+; Section enabled: true|false
 enabled = true
 ; Display the Valheim Plus logo in the main menu
 mainMenuLogo = true
-; Display the advertisement of our server hosting partner on the server browser menu
+; Display the advertisement of the server hosting partner on the server browser menu
 serverBrowserAdvertisement = false
 
 [Server]
-; Change false to true to enable this section.
+; Section enabled: true|false
 enabled = true
-; Modify the maximum amount of players on your Server.
 maxPlayers = 16
-; Removes the requirement to have a server password.
 disableServerPassword = false
-; This settings add a version control check to make sure that people that try to join your game or 
-; the server you try to join has V+ installed
-; WE HEAVILY RECOMMEND TO NEVER DISABLE THIS!
+; This setting adds a version control check to make sure that people that try to join your game or 
+; the server you try to join has V+ installed. WE HEAVILY RECOMMEND TO NEVER DISABLE THIS!
 enforceMod = true
-; Changes whether the server will force it's config on clients that connect. Only affects servers.
-; WE HEAVILY RECOMMEND TO NEVER DISABLE THIS!
+; Changes whether the server will force its configuration file on clients that connect. Only 
+; affects servers. WE HEAVILY RECOMMEND TO NEVER DISABLE THIS!
 serverSyncsConfig = true
-; If false allows you to keep your own defined hotkeys instead of synchronizing the ones declared 
-; for the server.
-; Sections need to be enabled in your local configuration to load hotkeys.
-; This is a client side setting and not affected by server settings.
+; If false, allows you to keep your own defined hotkeys instead of synchronizing the ones declared 
+; for the server. Sections need to be enabled in your local configuration to load hotkeys.
+; This is a client-side setting and not affected by server settings.
 serverSyncHotkeys = false
 
 [FirstPerson]
-; Change false to true to enable this section.
+; Section enabled: true|false
 enabled = true
-; Hotkey to enable First Person.
+; hotkey for toggling first-person view
 hotkey = F10
-; Default Field Of View to use.
+; Default Field of View for first-person view
 defaultFOV = 65.0
-; Hotkey to raise Field Of View.
+; hotkeys for changing FoV in first-person view
 raiseFOVHotkey = PageUp
-; Hotkey to lower Field Of View.
 lowerFOVHotkey = PageDown
 
 [Hud]
-; Change false to true to enable this section.
+; Section enabled: true|false
 enabled = true
-; Shows the required amount of items AND the amount of items in your inventory in build mode and 
-; while crafting.
-; This is enabled when the CraftFromChest section is enabled.
+; Shows the required amount of items AND the amount of items in your inventory in build mode, and 
+; while crafting. This is automatically enabled when the CraftFromChest section is enabled.
 showRequiredItems = true
-; Shows small notifications about all skill experienced gained in the top left corner.
+; Shows small notifications about all skill experienced gained, in the top-left corner.
 experienceGainedNotifications = true
 ; Set to true to remove the red screen flash overlay when the player takes damage.
 removeDamageFlash = false
-; If bow is in hotbar, display current ammo & total ammo under hotbar icon - never (0), when 
-; equipped (1), or always (2).
+; If a bow is in hotbar, display current ammo & total ammo under the hotbar icon:
+; never (0), when equipped (1), or always (2).
 displayBowAmmoCounts = 1
 
 [Chat]
-; Change false to true to enable this section.
+; Section enabled: true|false
 enabled = true
-; If the player is outside of this range in meters in comparison to the creator of the shout you 
-; will not see the message on the map or in the chat. If this is set to 0, its disabled.
+; If the player is outside of this range in meters from the creator of the shout, you will not see 
+; the message on the map, or in chat. If this is set to 0, it's disabled.
 shoutDistance = 0
 ; With this option enabled you will see the shout message in your chat window even if you are 
 ; outside of shoutDistance.
 outOfRangeShoutsDisplayInChatWindow = true
-; If the player is outside of this range in meters in comparison to the creator of the ping on the 
-; map you will not see the ping on the map. If this is set to 0, its disabled.
+; If the player is outside of this range in meters from the creator of the ping, you will not see 
+; the ping on the map. If this is set to 0, it's disabled.
 pingDistance = 0
 ; Disable the forced upper and lower case conversions for in-game text messages of all types.
 forcedCase = true
@@ -141,16 +136,15 @@ defaultNormalDistance = 32767
 defaultShoutDistance = 70
 
 [Map]
-; Change false to true to enable this section.
+; Section enabled: true|false
 enabled = true
-; With this enabled you will receive the same exploration progression as other players on the 
-; server.
-; This will also enable the option for the server to sync everyone's exploration progression on 
-; connecting to the server.
+; With shareMapProgression enabled, you will receive the same exploration progression as other 
+; players on the server. This will also enable the option for the server to sync everyone's 
+; exploration progression on connecting to the server.
 shareMapProgression = true
-; The radius of the map that you explore when moving.
+; The radius of the map that you explore, when moving.
 exploreRadius = 100
-; Prevents you and other people on the server to turn off their map sharing option.
+; Prevents you and other people on the server from turning off their location sharing option.
 preventPlayerFromTurningOffPublicPosition = true
 ; This option automatically shares created pins with everyone playing on the server.
 shareAllPins = true
@@ -158,27 +152,24 @@ shareAllPins = true
 displayCartsAndBoats = true
 
 [Brightness]
-; Change false to true to enable this section.
+; Section enabled: true|false
 enabled = false
-; Changes how bright it looks at night. A value between 5 and 10 will result in nearly double in 
+; Changes how bright it looks at night. A value between 5 and 10 will result in nearly double the
 ; brightness at night.
 nightBrightnessMultiplier = 0
 
 [Camera]
-; Change false to true to enable this section.
+; Section enabled: true|false
 enabled = false
-; The maximum zoom distance to your character in-game.
-; Default is 6
+; The maximum zoom distance to your character in-game. Default is 6.
 cameraMaximumZoomDistance = 6
-; The maximum zoom distance to your character when in a boat.
-; Default is 6
+; The maximum zoom distance to your character when in a boat. Default is 6.
 cameraBoatMaximumZoomDistance = 6
-; The in-game camera FOV.
-; Default is 65
+; The in-game camera FOV. Default is 65.
 cameraFOV = 65
 
 [GameClock]
-; Change false to true to enable this section.
+; Section enabled: true|false
 enabled = false
 ; Change time formatting from 24hr to AM-PM.
 useAMPM = false
@@ -194,12 +185,12 @@ textBlueChannel = 0
 textTransparencyChannel = 255
 
 [Hotkeys]
+; Section enabled: true|false
 ; https://docs.unity3d.com/ScriptReference/KeyCode.html <- a list of keycodes
-; Change false to true to enable this section.
 enabled = false
-; Roll forwards on hot key pressed.
+; Roll forwards on hotkey press.
 rollForwards = F9
-; Roll backwards on hot key pressed.
+; Roll backwards on hotkey press.
 rollBackwards = F10
 ```
 {: .nolineno }
@@ -211,6 +202,7 @@ rollBackwards = F10
 <div markdown="1">
 ```ini
 [Game]
+; Section enabled: true|false
 ; Change false to true to enable this section.
 enabled = true
 ; The games damage multiplier per person nearby in difficultyScaleRange(m) radius.
@@ -220,11 +212,10 @@ gameDifficultyDamageScale = 2
 ; Default is 30% monster health increase per player in radius.
 gameDifficultyHealthScale = 10
 ; Adds additional players to the difficulty calculation in multiplayer unrelated to the actual 
-; amount.
-; This option is disabled if its set to 0.
+; amount. This option is disabled if set to 0.
 extraPlayerCountNearby = 0
-; Sets the nearby player count always to this value + extraPlayerCountNearby.
-; This option is disabled if its set to 0.
+; Sets the nearby player count always to this value + extraPlayerCountNearby. This option is 
+; disabled if set to 0.
 setFixedPlayerCountTo = 0
 ; The range in meters at which other players count towards nearby players for the difficulty scale.
 difficultyScaleRange = 200
@@ -238,77 +229,56 @@ bigPortalNames = false
 disableFog = false
 
 [Experience]
-; Change false to true to enable this section. This section contains modifiers.
-; Modifiers are increases and reduction in percent declared by 50, or -50. The value 50 will 
-; increase experience gained by 50%, -50 will reduce experience gained by 50%.
+; Section enabled: true|false
 enabled = true
-; The modifier value for the experience gained of swords.
+; Modifiers below are increases and reductions in percent, declared by 50, or -50.
+; The value 50 will increase experience gained by 50%, -50 will reduce experience gained by 50%.
 swords = 15
-; The modifier value for the experience gained of knives.
 knives = 15
-; The modifier value for the experience gained of clubs.
 clubs = 15
-; The modifier value for the experience gained of polearms.
 polearms = 15
-; The modifier value for the experience gained of spears.
 spears = 15
-; The modifier value for the experience gained of blocking.
 blocking = 15
-; The modifier value for the experience gained of axes.
 axes = 15
-; The modifier value for the experience gained of bows.
 bows = 15
-; The modifier value for the experience gained of fire magic.
 fireMagic = 15
-; The modifier value for the experience gained of frost magic.
 frostMagic = 15
-; The modifier value for the experience gained of unarmed.
 unarmed = 15
-; The modifier value for the experience gained of mining.
 pickaxes = 15
-; The modifier value for the experience gained of wood cutting.
 woodCutting = 15
-; The modifier value for the experience gained of jumping.
 jump = 15
-; The modifier value for the experience gained of sneaking.
 sneak = 15
-; The modifier value for the experience gained of running.
 run = 15
-; The modifier value for the experience gained of swimming.
 swim = 15
-; The modifier value for the experience gained of riding.
 ride = 15
 
 [Food]
-; Change false to true to enable this section.
+; Section enabled: true|false
 enabled = true
-; Increase or reduce the time that food lasts by %.
-; The value 50 would cause food to run out 50% slower, -50% would cause the food to run out 50% 
-; faster.
+; Increase or reduce the time that food lasts by %. The value 50 would cause food to run out 50% 
+; slower, -50% would cause the food to run out 50% faster.
 foodDurationMultiplier = 15
 ; This option prevents food degrading over time - in other words, it retains its maximum benefit 
-; until it runs out instead of reducing its effect over time.
+; until it runs out, instead of reducing its effect over time.
 disableFoodDegradation = false
 
 [Armor]
-; Change false to true to enable this section. This section contains modifiers.
-; Modifiers are increases and reduction in percent declared by 50, or -50.
+; Section enabled: true|false
 enabled = true
-; Each of these values increase or reduce the armor of the specific item type by %.
-; The value 50 will increase the armor from 14 to 21. The value -50 will reduce the armor from 14 
-; to 7.
+; Modifiers below are increases and reductions in percent, declared by 50, or -50.
+; Each of these values increase or reduce the armor of the specific item type by percentage.
+; The value 50 increases armor from 14 to 21. -50 will reduce the armor from 14 to 7.
 helmets = 15
 chests = 15
 legs = 15
 capes = 15
 
 [Durability]
-; Change false to true to enable this section. This section contains modifiers.
-; Modifiers are increases and reduction in percent declared by 50, or -50.
+; Section enabled: true|false
 enabled = true
-; Each of these values increase or reduce the durability of the specific item type by %.
-; The value 50 will increase the durability from 100 to 150. The value -50 will reduce the 
-; durability from 100 to 50.
+; Modifiers below are increases and reductions in percent, declared by 50, or -50.
+; Each of these values increase or reduce the armor of the specific item type by percentage.
+; The value 50 increases durability from 100 to 150. -50 will reduce durability from 100 to 50.
 axes = 20
 pickaxes = 20
 hammer = 300
@@ -321,13 +291,13 @@ shields = 20
 torch = 20
 
 [Player]
-; Change false to true to enable this section.
+; Section enabled: true|false
 enabled = true
 ; The base amount of carry weight of your character.
 baseMaximumWeight = 400
 ; Increase the buff you receive to your carry weight from Megingjord's girdle.
 baseMegingjordBuff = 300
-; Increase auto pickup range of all items.
+; Increase auto-pickup range of all items.
 baseAutoPickUpRange = 3
 ; Disable all types of camera shake.
 disableCameraShake = false
@@ -340,23 +310,21 @@ cropNotifier = true
 ; How many seconds each comfort level contributes to the rested bonus.
 restSecondsPerComfortLevel = 60
 ; Change the death penalty in percentage, where higher will increase the death penalty and lower 
-; will reduce it.
-; This is a modifier value. 50 will increase it by 50%, -50 will reduce it by 50%.
+; will reduce it. This is a modifier value. 50 will increase it by 50%, -50 will reduce it by 50%.
 deathPenaltyMultiplier = 0
 ; If set to true, this option will automatically repair your equipment when you interact with the 
 ; appropriate workbench.
 autoRepair = false
-; Boss buff duration (seconds)
+; Boss-attained buff duration (seconds)
 guardianBuffDuration = 300
-; Boss buff cooldown (seconds)
+; Boss-attained buff cooldown (seconds)
 guardianBuffCooldown = 600
 ; Disable the Guardian Buff animation
 disableGuardianBuffAnimation = false
 ; If set to true, when equipping a one-handed weapon, the best shield from your inventory is 
-; automatically equipped.
-; (Best is determined by highest block power)
+; automatically equipped. (Best is determined by highest block power)
 autoEquipShield = false
-; When unequipping a one-handed weapon also unequip shield from inventory.
+; When un-equipping a one-handed weapon also un-equip shield from inventory.
 autoUnequipShield = false
 ; If set to true, weapon switches requested mid-attack will be carried out when the current attack 
 ; is finished instead of being ignored.
@@ -365,43 +333,40 @@ queueWeaponChanges = false
 skipIntro = false
 ; If set to false, disables the "I have arrived!" message on player spawn.
 iHaveArrivedOnSpawn = true
-; If set to true, you will not put away / unequip your items when swimming.
+; If set to true, you will not put away / un-equip your items when swimming.
 dontUnequipItemsWhenSwimming = true
 ; If set to true, items will be re-equipped when you exit water after swimming (if they were 
 ; hidden automatically)
 reequipItemsAfterSwimming = true
-; This value represents how much the fall damage should be scaled in +/- %. This is a modifier 
-; value.
-; The value 50 would result in 50% increased fall damage. The value -50 would result in 50% 
-; reduced fall damage.
+; This modifier represents how much fall damage should be scaled in +/- %. 50 would result in 50% 
+; increased fall damage, and -50 would result in 50% reduced fall damage.
 fallDamageScalePercent = -15
 ; Max fall damage. Game default is 100 (so with enough health, falls can't kill).
 maxFallDamage = 100
 ; If set to true, all tutorials will skip from now on. You can turn this config off and reset the 
 ; tutorial (in the settings) at any time.
 skipTutorials = false
-; Disable the encumbered state when you carry too many items (overweight)
+; Disable the encumbered state when you carry too many items (overweight).
 disableEncumbered = false
-; Allow auto pickup of items when encumbered (overweight)
+; Allow auto pickup of items when encumbered (overweight).
 autoPickUpWhenEncumbered = false
-; Shortens the teleport time as much as much as possible
+; Shortens the teleport time as much as much as possible.
 disableEightSecondTeleport = false
 
 [Shields]
-; Change false to true to enable this section, if you set this to false the mode will not be 
-; accessible.
+; Section enabled: true|false
 enabled = true
 ; Increase or decrease the block value on all shields in %. -50 would be 50% less block rating, 50 
 ; would be 50% more block rating.
 blockRating = 30
 
 [Stamina]
-; Change false to true to enable this section. This section contains modifiers.
-; Modifiers are increases and reduction in percent declared by 50, or -50.
+; Section enabled: true|false
 enabled = true
+; Modifiers are increases and reductions by percent, declared by 50, or -50.
 ; Changes the amount of stamina cost of using the dodge roll by %
 dodgeStaminaUsage = -30
-; Changes the stamina drain of being overweight by %
+; Changes the stamina drain while over-encumbered by %
 encumberedStaminaDrain = -30
 ; Changes the stamina cost of jumping by %
 jumpStaminaDrain = -30
@@ -417,11 +382,10 @@ staminaRegenDelay = 0
 swimStaminaDrain = -30
 
 [StaminaUsage]
-; Change false to true to enable this section. This section contains modifiers.
-; Modifiers are increases and reduction in percent declared by 50, or -50.
+; Section enabled: true|false
 enabled = true
-; Each of these values change the respective tool in stamina usage by increases and reduction in 
-; percent declared by 50, or -50.
+; Modifiers are increases and reductions by percent, declared by 50, or -50.
+; Each of these values change the respective tool's stamina usage
 axes = -20
 blocking = -20
 bows = -20
@@ -438,36 +402,35 @@ cultivator = -30
 fishing = -30
 
 [Bed]
-; Change false to true to enable this section
+; Section enabled: true|false
 enabled = false
-; Change false to true to enable sleeping without setting bed as spawn.
+; Change sleepWithoutSpawn to true to enable sleeping without setting bed as spawn.
 ; When hovering over a bed you will be presented with a Hot-Key 'LShift+E'. This Hot-Key will 
-; allow for you to sleep on any bed without having to set a spawn-point.
+; allow for you to sleep on any bed without having to set a spawn point.
 sleepWithoutSpawn = false
 ; Change false to true to enable sleeping on only unclaimed beds without setting bed as spawn.
 ; With this option enabled only beds that are not claimed by other players can be slept on without 
-; setting spawn-point using 'Shift+E'
+; setting spawn point using 'Shift+E'
 unclaimedBedsOnly = false
 
 [FireSource]
-; Change false to true to enable this section.
+; Section enabled: true|false
 enabled = false
-; If set to true, torch-type fire sources will stay at max fuel level once filled.
+; If set to true, torch fire sources will stay at max fuel level, once filled.
 ; Applies to: wood torches, iron torches, green torches, sconces and brazier.
 torches = false
 ; If set to true, non torch-type fire sources will stay at max fuel level once filled.
 fires = false
-; Automatically pull wood from nearby chests to be placed inside the Fire as soon as its empty.
+; Automatically pull wood from nearby chests to be placed inside the Fire as soon as it's empty.
 autoFuel = false
 ; This option prevents the Fire to pull items from warded areas if it isn't placed inside of it.
 ; For convenience, we recommend this to be set to true.
 ignorePrivateAreaCheck = true
-; The range of the chest detection for the auto fuel features.
-; Maximum is 50
+; The range of the chest detection for the auto fuel features. Maximum is 50.
 autoRange = 10
 
 [PlayerProjectile]
-; Change false to true to enable this section.
+; Section enabled: true|false
 enabled = false
 ; Value of 50 would increase the minimum charge velocity from 2 to 3.
 playerMinChargeVelocityMultiplier = 0
@@ -480,11 +443,11 @@ playerMinChargeAccuracyMultiplier = 0
 ; the point of maximum charge release.
 playerMaxChargeAccuracyMultiplier = 0
 ; Enabling this option will linearly scale by skill level from the base values of the weapon to 
-;the modified values (according to multipliers above).
+; the modified values (according to multipliers above).
 enableScaleWithSkillLevel = false
 
 [MonsterProjectile]
-; Change false to true to enable this section.
+; Section enabled: true|false
 enabled = false
 ; Value of 10 would increase the projectile velocity from 50 to 55.
 monsterMaxChargeVelocityMultiplier = 0
@@ -493,7 +456,7 @@ monsterMaxChargeVelocityMultiplier = 0
 monsterMaxChargeAccuracyMultiplier = 0
 
 [Tameable]
-; Change false to true to enable this section.
+; Section enabled: true|false
 enabled = false
 ; Modify what happens when a tamed creature is attacked.
 ; 0 = normal, 1 = essential(deadly attacks stun instead of kill, tamed creatures can still die 
@@ -519,7 +482,7 @@ stunInformation = false
 <div markdown="1">
 ```ini
 [Building]
-; Change false to true to enable this section.
+; Section enabled: true|false
 enabled = true
 ; Remove some of the Invalid placement messages, most notably provides the ability to place 
 ; objects into other objects
@@ -534,24 +497,21 @@ maximumPlacementDistance = 12
 ; The radius, in meters, in which a piece must be to contribute to the comfort level.
 pieceComfortRadius = 20
 ; When destroying a building piece, setting this to true will ensure it always drops full 
-; resources.
-; We recommend to enable this if you use this section.
+; resources. We recommend to enable this if you use this section.
 alwaysDropResources = true
 ; When destroying a building piece, setting this to true will ensure it always drops pieces that 
-; the devs have marked as "do not drop".
-; We recommend to enable this if you use this section.
+; the devs have marked as "do not drop". We recommend to enable this if you use this section.
 alwaysDropExcludedResources = true
 ; Setting this to true will cause repairing with the hammer to repair in a radius instead of a 
 ; single piece.
 enableAreaRepair = true
 ; Sets the area repair radius of enableAreaRepair. A value of 7.5 would mean your repair radius is 
-; 7.5 meters.
-; Requires enableAreaRepair=true
+; 7.5 meters. Requires enableAreaRepair=true
 areaRepairRadius = 7.5
 
 [GridAlignment]
-; Change false to true to enable this section.
-; This offers a global fixed grid system to make precise placements.
+; Section enabled: true|false
+; This offers a global fixed grid system to make more consistent placements.
 enabled = true
 ; Key to enable grid alignment.
 align = LeftAlt
@@ -561,9 +521,8 @@ alignToggle = F7
 changeDefaultAlignment = F6
 
 [AdvancedBuildingMode]
+; Section enabled: true|false
 ; https://docs.unity3d.com/ScriptReference/KeyCode.html <- a list of keycodes
-; Change false to true to enable this section, if you set this to false the mode will not be 
-; accessible.
 enabled = false
 ; Enter the advanced building mode with this key when building
 enterAdvancedBuildingMode = F1
@@ -581,9 +540,8 @@ increaseScrollSpeed = KeypadPlus
 decreaseScrollSpeed = KeypadMinus
 
 [AdvancedEditingMode]
+; Section enabled: true|false
 ; https://docs.unity3d.com/ScriptReference/KeyCode.html <- a list of keycodes
-; Change false to true to enable this section, if you set this to false the mode will not be 
-; accessible.
 enabled = false
 ; Enter the advanced editing mode with this key
 enterAdvancedEditingMode = Keypad0
@@ -605,8 +563,7 @@ increaseScrollSpeed = KeypadPlus
 decreaseScrollSpeed = KeypadMinus
 
 [FreePlacementRotation]
-; Change false to true to enable this section, if you set this to false the mode will not be 
-; accessible.
+; Section enabled: true|false
 enabled = false
 ; Rotates placement marker by 1 degree with keep ability to attach to nearly pieces.
 rotateY = LeftAlt
@@ -618,7 +575,7 @@ copyRotationParallel = F
 copyRotationPerpendicular = G
 
 [StructuralIntegrity]
-; Change false to true to enable this section.
+; Section enabled: true|false
 enabled = false
 ; Disables the entire structural integrity system and allows for placement in free air, does not 
 ; prevent building damage.
@@ -652,68 +609,55 @@ marble = 0
 <div markdown="1">
 ```ini
 [Inventory]
-; Change false to true to enable this section.
+; Section enabled: true|false
 enabled = true
-; Player inventory number of rows (inventory is resized up to 6 rows, higher values will add a 
-; scrollbar). default 4, min 4, max 20
+; Player inventory number of rows. Inventory can be resized up to 6 rows, with higher values
+; adding a scrollbar. Default 4, Min 4, Max 20.
 playerInventoryRows = 4
-; Wood chest number of columns
-; (default 5, 3 min, 8 max)
+; Wood chest number of columns. Default 5, Min 3, Max 8.
 woodChestColumns = 5
-; Wood chest number of rows (more than 4 rows will add a scrollbar).
-; (default 2, min 2, 10 max)
+; Wood chest number of rows. Default 2, Min 2, Max 10. More than 4 rows will add a scrollbar.
 woodChestRows = 2
-; Personal chest number of columns.
-; (default 3, 3 min, 8 max)
+; Personal chest number of columns. Default 3. Min 3, Max 8.
 personalChestColumns = 3
-; Personal chest number of rows
-; (default 2, 2 min, 20 max)
+; Personal chest number of rows. Default 2. Min 2, Max 20. More than 4 rows will add a scrollbar.
 personalChestRows = 2
-; Iron chest number of columns.
-; (default 6, min 3, max 8)
+; Iron chest number of columns. Default 6, min 3, max 8.
 ironChestColumns = 6
-; Iron chest number of rows (more than 4 rows will add a scrollbar)
-; (default 4, min 3, max 20)
+; Iron chest number of rows. Default 4, Min 3, Max 20. More than 4 rows will add a scrollbar.
 ironChestRows = 4
-; Blackmetal chests already have 8 columns by default but now you can lower it
-; (default 8, min 3, max 8)
+; Blackmetal chests already have 8 (max) columns by default, but now you can lower it down to 3.
 blackmetalChestColumns = 8
-; Blackmetal number of rows (more than 4 rows will add a scrollbar)
-; (default 4, min 3, max 20)
+; Blackmetal number of rows. Default 4, Min 3, Max 20. More than 4 rows will add a scrollbar.
 blackmetalChestRows = 4
-; Cart (Wagon) inventory number of columns
-; (default 8, min 6, max 8)
+; Cart inventory number of columns. Default 8, Min 6, Max 8.
 cartInventoryColumns = 8
-; Cart (Wagon) inventory number of rows (more than 4 rows will add a scrollbar)
-; (default 3, min 3, max 30)
+; Cart inventory number of rows. Default 3, Min 3, Max 30. More than 4 rows will add a scrollbar. 
 cartInventoryRows = 4
-; Karve (small boat) inventory number of columns
-; (default 2, min 2, max 8)
+; Karve (small boat) inventory number of columns. Default 2, Min 2, Max 8.
 karveInventoryColumns = 5
-; Karve (small boat) inventory number of rows (more than 4 rows will add a scrollbar)
-; (default 2, min 2, max 30)
+; Karve (small boat) inventory number of rows. Default 2, Min 2, Max 30. More than 4 rows will add 
+; a scrollbar.
 karveInventoryRows = 2
-; Longboat (large boat) inventory number of columns
-; (default 8, min 6, max 8)
+; Longboat (large boat) inventory number of columns. Default 8, Min 6, Max 8.
 longboatInventoryColumns = 8
-; Longboat (large boat) inventory number of rows (more than 4 rows will add a scrollbar)
-; (default 3, min 3, max 30)
+; Longboat (large boat) inventory number of rows. Default 3, Min 3, Max 30. More than 4 rows will 
+; add a scrollbar.
 longboatInventoryRows = 4
-; By default tools and weapons go into inventories top to bottom and other materials bottom to top.
-; Set to true to make all items go into the inventory top to bottom.
+; By default tools and weapons go into inventories top-to-bottom, and other materials 
+; bottom-to-top. Set to true to make all items go into the inventory top-to-bottom.
 inventoryFillTopToBottom = false
 ; By default items go to their original position when picking up your tombstone.
-; Set to true to make all stacks try to merge with an existing stack first.
+; Set to true to make all stacks attempt to merge with an existing stack first.
 mergeWithExistingStacks = true
 
 [Items]
-; Change false to true to enable this section.
+; Section enabled: true|false
 enabled = true
-; Enables you to teleport with ores and other usually teleport restricted objects.
+; Removes restrictions from teleporting with ore and other usually-restricted objects.
 noTeleportPrevention = true
-; Increase or reduce item weight by a modifier in percent.
-; The value -50 will reduce item weight of every object by 50%, 50 will increase the weight of 
-; every item by 50%.
+; Increase or reduce item weight by a modifier in percent. The value -50 will reduce item weight 
+; of every object by 50%, 50 will increase the weight of every item by 50%.
 baseItemWeightReduction = -20
 ; Increase or reduce the size of all maximum item stacks by a modifier in percent.
 ; The value 50 would set a usual item stack of 100 to be 150.
@@ -726,18 +670,17 @@ droppedItemOnGroundDurationInSeconds = 3600
 itemsFloatInWater = true
 
 [Gathering]
-; Change false to true to enable this section. This section contains modifiers. Modifiers are 
-; increases and reduction in percent declared by 50, or -50.
+; Section enabled: true|false
+; Modifiers below are increases and reductions in percent, declared by 50, or -50.
 enabled = true
 ; Modify the chance to drop resources from resource nodes affected by this category. This only 
 ; works on resource nodes that do not have guaranteed drops.
-; As example by default scrap piles in dungeons have a 20% chance to drop a item, if you set this 
-; option to 200, you will then have a 60% chance to drop iron.
+; For example, by default scrap piles in dungeons have a 20% chance to drop a item. If you set 
+; this option to 200, it will then have a 60% chance to drop iron.
 dropChance = 200
-; Each of these values increase or reduce the dropped items from destroyed objects with tools (
-; Stones, Trees, Resource nodes, etc.) by %.
-; The value 50 will increase the dropped wood from trees from 10 to 15. The value -50 will reduce 
-; the amount of dropped wood from 10 to 5.
+; Each of these values increase or reduce the amounts of produced items when harvesting objects 
+; with tools (Stones, Trees, Resource nodes, etc) by %. 50 will increase the dropped wood from 
+; trees from 10 to 15. -50 will reduce the amount of dropped wood from 10 to 5.
 wood = 10
 stone = 0
 fineWood = 20
@@ -748,29 +691,25 @@ tinOre = 50
 copperOre = 50
 silverOre = 20
 chitin = 20
-; feather will also affect the drops from shooting gulls/crows, as well as drops from trees.
 feather = 10
 
 [LootDrop]
-; Change false to true to enable this section, if you set this to false the mode will not be 
-; accessible
+; Section enabled: true|false
 enabled = false
-; Change the amount of loot dropped when creatures or monsters are slain.
-; A value of -100 will eliminate all drops, 0 will have no effect, 100 will double drops, 200 will 
-; triple and so on.
+; Change the amount of loot dropped when creatures or monsters are slain. A value of -100 will 
+; eliminate all drops, 0 will have no effect, 100 will double drops, 200 will triple, and so on.
 lootDropAmountMultiplier = 0
-; Change the chance of loot dropping when creatures or monsters are slain.
-; A value of -100 will eliminate all drops, 0 will have no effect, 100 will double the percent of 
-; getting a drop, 200 will triple and so on.
-; Example: If a drop has a 40% chance, setting this to 200 will make that chance 80%,
-; and setting it to 300 will make it 100% (120% technically, but anything above 100% acts as 100%)
+; Change the chance of loot dropping when creatures or monsters are slain. A value of -100 will 
+; eliminate all drops, 0 will have no effect, 100 will double the percent of getting a drop, 200 
+; will triple it, and so on.
+; For example: If a drop has a 40% chance, setting this to 200 will make that chance 80%, and 
+; setting it to 300 will make it 100% (120% technically, but anything above 100% acts as 100%)
 lootDropChanceMultiplier = 0
 
 [Pickable]
-; Change false to true to enable this section.
+; Section enabled: true|false
 ; Each value below (in percent) will modify the yield when "picking" items (default key E) such as 
-; berries and flowers.
-; A value of 100 will double drops, 200 will triple and so on.
+; berries and flowers. A value of 100 will double drops, 200 will triple and so on.
 enabled = true
 ; All berries, all mushrooms, onions and carrots
 edibles = 20
@@ -784,23 +723,22 @@ valuables = 10
 surtlingCores = 0
 
 [Wagon]
-; Change false to true to enable this section.
+; Section enabled: true|false
 enabled = true
-; Change the base wagon physical mass of the wagon object.
-; This is essentially the base weight of a cart.
+; Change the base wagon physical mass of the wagon object. This is essentially the base weight of 
+; a cart.
 wagonBaseMass = 20
-; This value changes the physical weight of wagons by +/- more/less from item weight inside.
-; The value 50 would increase the weight by 50% more. The value -100 would remove the entire extra 
+; This value changes the physical weight of wagons by +/- more/less from item weight inside. The 
+; value 50 would increase the weight by 50% more. The value -100 would remove the entire extra
 ; weight.
 wagonExtraMassFromItems = -20
 
 [Ward]
-; Change false to true to enable this section.
+; Section enabled: true|false
 enabled = false
 ; The range of wards by meters.
 wardRange = 20
-; Set the enemy spawn radius around wards in meters
-; This value equals wardRange if its set to 0.
+; Set the enemy spawn radius around wards in meters. This value equals wardRange if it's set to 0.
 wardEnemySpawnRange = 0
 ```
 {: .nolineno }
@@ -812,12 +750,12 @@ wardEnemySpawnRange = 0
 <div markdown="1">
 ```ini
 [Workbench]
-; Change false to true to enable this section.
+; Section enabled: true|false
 enabled = true
 ; Set the workbench radius in meters.
 workbenchRange = 30
 ; Set the enemy spawn radius around workbenches in meters
-; This value equals workbenchRange if its set to 0.
+; This value equals workbenchRange if it's set to 0.
 workbenchEnemySpawnRange = 0
 ; Sets the workbench attachment (e.g. anvil) radius.
 workbenchAttachmentRange = 8
@@ -825,20 +763,20 @@ workbenchAttachmentRange = 8
 disableRoofCheck = false
 
 [CraftFromChest]
-; Change false to true to enable this section.
+; Section enabled: true|false
 ; This feature allows you to craft from nearby chests when in range.
 enabled = false
 ; Change false to true to disable this feature when using a Cooking Station.
 disableCookingStation = false
 ; If in a workbench area, uses it as reference point when scanning for chests.
 checkFromWorkbench = true
-; This option prevents crafting to pull items from warded areas if the player doesn't have access 
-; to it.
+; This option prevents crafting from pulling items from warded areas, if the player doesn't have 
+; access to it.
 ignorePrivateAreaCheck = false
 ; The range of the chest detection in meters.
 range = 20
-; The interval in seconds that the feature scans your nearby chests.
-; We recommend not going below 3 seconds.
+; The interval in seconds that the feature scans nearby chests. We recommend not going below 3 
+; seconds.
 lookupInterval = 3
 ; Allows the system to use and see contents of carts for crafting. Might also allow use of other 
 ; modded containers or vehicles not accessible otherwise.
@@ -856,22 +794,22 @@ allowCraftingFromShips = false
 <div markdown="1">
 ```ini
 [Beehive]
-; Change false to true to enable this section.
+; Section enabled: true|false
 enabled = true
-; Configure the speed at which the bees produce honey in seconds, 1200 seconds are 24 in-game hours.
+; Configure the speed at which the bees produce honey in seconds, 1200 seconds are 24 in-game 
+; hours.
 honeyProductionSpeed = 1200
 ; Configure the maximum amount of honey in beehives.
 maximumHoneyPerBeehive = 12
 ; Instead of dropping the items, they will be placed inside the nearest nearby chests.
 autoDeposit = true
-; The range of the chest detection for the auto deposit feature.
-; Maximum is 50
+; The range of the chest detection for the auto deposit feature. Maximum is 50
 autoDepositRange = 10
 ; Display the minutes and seconds until the beehive produces honey on crosshair hover.
 showDuration = true
 
 [Fermenter]
-; Change false to true to enable this section.
+; Section enabled: true|false
 enabled = true
 ; Configure the time that the fermenter takes to produce its product, 2400 seconds are 48 in-game 
 ; hours.
@@ -882,18 +820,17 @@ fermenterItemsProduced = 16
 showDuration = true
 ; Instead of dropping the items, they will be placed inside the nearest nearby chests.
 autoDeposit = true
-; Automatically pull meads from nearby chests to be placed inside the Fermenter as soon as its 
+; Automatically pull mead from nearby chests to be placed inside the Fermenter as soon as it's 
 ; empty.
 autoFuel = false
 ; This option prevents the fermenter to pull items from warded areas if it isn't placed inside of 
 ; it. For convenience, we recommend this to be set to true.
 ignorePrivateAreaCheck = true
-; The range of the chest detection for the auto deposit and auto fuel features
-; Maximum is 50
+; The range of the chest detection for the auto deposit and auto fuel features. Maximum is 50
 autoRange = 10
 
 [Kiln]
-; Change false to true to enable this section.
+; Section enabled: true|false
 enabled = true
 ; Maximum amount of wood in a Kiln.
 maximumWood = 25
@@ -905,7 +842,7 @@ dontProcessRoundLog = true
 productionSpeed = 15
 ; Instead of dropping the items, they will be placed inside the nearest nearby chests.
 autoDeposit = true
-; The Kiln will pull wood from nearby chests to be automatically added to it when its empty.
+; The Kiln will pull wood from nearby chests to be automatically added to it when it's empty.
 ; This option respects the dontProcessFineWood and dontProcessRoundLog settings.
 autoFuel = true
 ; Stops autoFuel (looking for fuel) when there is at least this quantity of Coal in nearby chests
@@ -914,12 +851,11 @@ stopAutoFuelThreshold = 2000
 ; This option prevents the Kiln to pull items from warded areas if it isn't placed inside of it.
 ; For convenience, we recommend this to be set to true.
 ignorePrivateAreaCheck = true
-; The range of the chest detection for the auto deposit and fuel features.
-; Maximum is 50
+; The range of the chest detection for the auto deposit and fuel features. Maximum is 50.
 autoRange = 5
 
 [Smelter]
-; Change false to true to enable this section.
+; Section enabled: true|false
 enabled = true
 ; Maximum amount of ore in a Smelter.
 maximumOre = 10
@@ -932,17 +868,16 @@ productionSpeed = 30
 ; Instead of dropping the items, they will be placed inside the nearest nearby chests.
 autoDeposit = true
 ; The Smelter will pull coal and raw materials from nearby chests to be automatically added to it 
-; when its empty.
+; when it's empty.
 autoFuel = true
 ; This option prevents the Smelter to pull items from warded areas if it isn't placed inside of it.
 ; For convenience, we recommend this to be set to true.
 ignorePrivateAreaCheck = true
-; The range of the chest detection for the auto deposit and auto fuel features.
-; Maximum is 50
+; The range of the chest detection for the auto deposit and auto fuel features. Maximum is 50.
 autoRange = 5
 
 [Furnace]
-; Change false to true to enable this section.
+; Section enabled: true|false
 enabled = true
 ; Maximum amount of ore in a Furnace.
 maximumOre = 10
@@ -955,19 +890,18 @@ productionSpeed = 30
 ; Instead of dropping the items, they will be placed inside the nearest nearby chests.
 autoDeposit = true
 ; The Furnace will pull coal and raw materials from nearby chests to be automatically added to it 
-; when its empty.
+; when it's empty.
 autoFuel = true
 ; This option prevents the Furnace to pull items from warded areas if it isn't placed inside of it.
 ; For convenience, we recommend this to be set to true.
 ignorePrivateAreaCheck = true
-; The range of the chest detection for the auto deposit and auto fuel features.
-; Maximum is 50
+; The range of the chest detection for the auto deposit and auto fuel features. Maximum is 50.
 autoRange = 5
-; This option allows all ores inside the Furnace.
+; This option allows all 'earlier' ore types in the Furnace.
 allowAllOres = true
 
 [Windmill]
-; Change false to true to enable this section.
+; Section enabled: true|false
 enabled = true
 ; Maximum amount of barley in a windmill.
 maximumBarley = 50
@@ -977,18 +911,16 @@ productionSpeed = 10
 ignoreWindIntensity = false
 ; Instead of dropping the items, they will be placed inside the nearest nearby chests.
 autoDeposit = true
-; The Windmill will pull barley from nearby chests to be automatically added to it when its empty.
+; The Windmill will pull barley from nearby chests to be automatically added to it when it's empty.
 autoFuel = true
 ; This option prevents the Windmill to pull items from warded areas if it isn't placed inside of 
-; it.
-; For convenience, we recommend this to be set to true.
+; it. For convenience, we recommend this to be set to true.
 ignorePrivateAreaCheck = true
-; The range of the chest detection for the auto deposit and auto fuel features.
-; Maximum is 50
+; The range of the chest detection for the auto deposit and auto fuel features. Maximum is 50
 autoRange = 5
 
 [SpinningWheel]
-; Change false to true to enable this section.
+; Section enabled: true|false
 enabled = true
 ; Maximum amount of flax in a spinning wheel.
 maximumFlax = 50
@@ -996,19 +928,17 @@ maximumFlax = 50
 productionSpeed = 30
 ; Instead of dropping the items, they will be placed inside the nearest nearby chests.
 autoDeposit = true
-; The Spinning Wheel will pull flax from nearby chests to be automatically added to it when its 
+; The Spinning Wheel will pull flax from nearby chests to be automatically added to it when it's 
 ; empty.
 autoFuel = true
 ; This option prevents the Spinning Wheel to pull items from warded areas if it isn't placed 
-; inside of it.
-; For convenience, we recommend this to be set to true.
+; inside of it. For convenience, we recommend this to be set to true.
 ignorePrivateAreaCheck = true
-; The range of the chest detection for the auto deposit and auto fuel features
-; Maximum is 50
+; The range of the chest detection for the auto deposit and auto fuel features. Maximum is 50
 autoRange = 5
 
 [EitrRefinery]
-; Change false to true to enable this section.
+; Section enabled: true|false
 enabled = true
 ; Maximum amount of sap in an Eitr Refinery.
 maximumSap = 20
@@ -1024,12 +954,11 @@ autoFuel = true
 ; This option prevents the Eitr Refinery to pull items from warded areas if it isn't placed inside 
 ; of it. For convenience, we recommend this to be set to true.
 ignorePrivateAreaCheck = true
-; The range of the chest detection for the auto deposit and auto fuel features.
-; Maximum is 50
+; The range of the chest detection for the auto deposit and auto fuel features. Maximum is 50.
 autoRange = 5
 
 [WispSpawner]
-; Change false to true to enable this section.
+; Section enabled: true|false
 enabled = true
 ; This value determines the maximum amount of Wisp per spawner.
 maximumWisps = 6
