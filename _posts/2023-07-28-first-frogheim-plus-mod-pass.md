@@ -86,7 +86,7 @@ enforceMod = true
 ; Changes whether the server will force it's config on clients that connect. Only affects servers.
 ; WE HEAVILY RECOMMEND TO NEVER DISABLE THIS!
 serverSyncsConfig = true
-; If false allows you to keep your own defined hotkeys instead of synchronising the ones declared 
+; If false allows you to keep your own defined hotkeys instead of synchronizing the ones declared 
 ; for the server.
 ; Sections need to be enabled in your local configuration to load hotkeys.
 ; This is a client side setting and not affected by server settings.
@@ -145,7 +145,7 @@ defaultShoutDistance = 70
 enabled = true
 ; With this enabled you will receive the same exploration progression as other players on the 
 ; server.
-; This will also enable the option for the server to sync everyones exploration progression on 
+; This will also enable the option for the server to sync everyone's exploration progression on 
 ; connecting to the server.
 shareMapProgression = true
 ; The radius of the map that you explore when moving.
@@ -471,7 +471,7 @@ autoRange = 10
 enabled = false
 ; Value of 50 would increase the minimum charge velocity from 2 to 3.
 playerMinChargeVelocityMultiplier = 0
-; Value of 50 would increase the maximum charge velocity (of Finwood bow) from 50 to 75.
+; Value of 50 would increase the maximum charge velocity (of Finewood bow) from 50 to 75.
 playerMaxChargeVelocityMultiplier = 0
 ; Value of (+)50 increase in accuracy will change the variance of arrows 20 degree to 10 degree at 
 ; the point of minimum charge release.
@@ -753,7 +753,7 @@ feather = 10
 
 [LootDrop]
 ; Change false to true to enable this section, if you set this to false the mode will not be 
-; accesible
+; accessible
 enabled = false
 ; Change the amount of loot dropped when creatures or monsters are slain.
 ; A value of -100 will eliminate all drops, 0 will have no effect, 100 will double drops, 200 will 
@@ -832,7 +832,7 @@ enabled = false
 disableCookingStation = false
 ; If in a workbench area, uses it as reference point when scanning for chests.
 checkFromWorkbench = true
-; This option prevents crafting to pull items from warded areas if the player doesnt have access 
+; This option prevents crafting to pull items from warded areas if the player doesn't have access 
 ; to it.
 ignorePrivateAreaCheck = false
 ; The range of the chest detection in meters.
@@ -858,7 +858,7 @@ allowCraftingFromShips = false
 [Beehive]
 ; Change false to true to enable this section.
 enabled = true
-; Configure the speed at which the bees produce honey in seconds, 1200 seconds are 24 ingame hours.
+; Configure the speed at which the bees produce honey in seconds, 1200 seconds are 24 in-game hours.
 honeyProductionSpeed = 1200
 ; Configure the maximum amount of honey in beehives.
 maximumHoneyPerBeehive = 12
@@ -873,7 +873,7 @@ showDuration = true
 [Fermenter]
 ; Change false to true to enable this section.
 enabled = true
-; Configure the time that the fermenter takes to produce its product, 2400 seconds are 48 ingame 
+; Configure the time that the fermenter takes to produce its product, 2400 seconds are 48 in-game 
 ; hours.
 fermenterDuration = 2400
 ; Configure the total amount of produced items from a fermenter.
@@ -908,7 +908,7 @@ autoDeposit = true
 ; The Kiln will pull wood from nearby chests to be automatically added to it when its empty.
 ; This option respects the dontProcessFineWood and dontProcessRoundLog settings.
 autoFuel = true
-; Stops autoFuel (looking for fuel) when there is at leasts this quantity of Coal in nearby chests
+; Stops autoFuel (looking for fuel) when there is at least this quantity of Coal in nearby chests
 ; (ignored if set to 0)
 stopAutoFuelThreshold = 2000
 ; This option prevents the Kiln to pull items from warded areas if it isn't placed inside of it.
@@ -1014,7 +1014,7 @@ enabled = true
 maximumSap = 20
 ; Maximum amount of soft tissue in an Eitr Refinery.
 maximumSoftTissue = 20
-; The time it takes for the Eitr Refinery to produce a single eitr in seconds.
+; The time it takes for the Eitr Refinery to produce a single Eitr in seconds.
 productionSpeed = 40
 ; Instead of dropping the items, they will be placed inside the nearest nearby chests.
 autoDeposit = true
@@ -1048,8 +1048,8 @@ wispSpawnChanceMultiplier = 30
 
 ### Known Caveats
 
-When when reducing inventory and stack sizes (say, if we revert such changes), you can lose items in the process. So we'll need to take care to reallocate chests and inventory before reverting something like that. I doubt this will be a thing for us, though.
+When reducing inventory and stack sizes (say, if we revert such changes), we can lose items in the process. In such cases, we first need to take care to reallocate stacks and inventory usage to conform to the newly-imposed limits. I doubt this will be a likely situation for us, though.
 
-Furthermore, it's always possible some mod features are bugged or not working. Last time I tried to use auto chest consumption and allocation, it only worked for one player and not all others, so there can be some desynchronization. We'll have to see. It's not the end of the world, if we have to manually fill production structures ourselves, but to make up for the manual labor, we can increase yields, speed up the process, etc.
+Furthermore, it's always possible some mod features are bugged or not working. The last time I enabled production structures' automatic use of nearby chests, it only worked for one player and not all others, amounting to desynchronization problems. We'll have to see. It's not the end of the world if we have to manually fill production structures ourselves again - but to make up for the manual labor, we can increase yields, speed up the process, etc.
 
 Anyway, the posted changes are already live, so have at it! See many of you on later tonight.
